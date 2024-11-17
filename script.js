@@ -17,10 +17,10 @@ window.onload = function(){
 
 function openNav() {
     var sidebar = document.getElementById('ham-sidebar');
-    var mainButton = document.getElementById('main');
+    var mainContent = document.getElementById('main-content');
 
     sidebar.style.width = '250px';
-    mainButton.style.marginLeft = '250px'
+    mainContent.style.marginLeft = '250px'
 
     var hamburgerButton = document.getElementById('main')
     hamburgerButton.style.display = 'none';
@@ -35,10 +35,10 @@ function openNav() {
 
 function closeNav(){
     var sidebar = document.getElementById('ham-sidebar');
-    var mainButton = document.getElementById('main');
+    var mainContent = document.getElementById('main-content');
 
     sidebar.style.width = '0';
-    mainButton.style.marginLeft = '0'
+    mainContent.style.marginLeft = '0'
 
     var hamburgerButton = document.getElementById('main')
     sidebar.classList.remove('open');
