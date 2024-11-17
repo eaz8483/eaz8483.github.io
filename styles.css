@@ -13,10 +13,12 @@ border: 3px solid #73AD21;
  }
 .fixed-position {
 position: fixed;
-top: 25px;
+top: 120px;
 left: 40%;
-transform: translateX(-25%);
+transform: translateX(-60%);
 color:rgb(31, 47, 48);
+z-index: 1;
+text-align: center;
  }
 
 .hamburger-button {
@@ -24,9 +26,19 @@ width: 35px;
 height: 30px;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+justify-content: center;
+align-items: center;
 cursor: pointer;
 transition: background-color 0.3s ease, transform 0.3s ease;
+background: none;
+padding: 0;
+border:none;
+gap: 4px;
+position:fixed;
+top:10px;
+left:10px;
+z-index: 3;
+
  }
 
 .line {
@@ -35,6 +47,7 @@ height: 4px;
 background-color: rgb(62, 62, 64);
 border-radius: 2px;
 transition: transform 0.3s ease;
+
  }
 
 .hamburger-button:hover {
@@ -44,13 +57,14 @@ transition: transform 0.3s ease;
 
 
 .triangle-container {
-    position:absolute;
+    position:fixed;
     top: 0;
     right:0;
     width:700px;
     height: 550px;
     overflow: hidden;
     clip-path: polygon(0% 0%,100% 62%, 100% 0%);
+    z-index: 1;
  }
 
 .triangle-image{
@@ -59,4 +73,62 @@ transition: transform 0.3s ease;
     object-fit: cover;
 }
 
+
+/* Sidebar Menu */
+.sidebar {
+    height:100%;
+    width: 0;
+    position: fixed;
+    z-index: 2; /*stay on top*/
+    top: 0;
+    left:0;
+    background-color: #111;
+    position:fixed;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: width 0.5s; /* time it takes for sidebar to appear*/
+
+}
+
+/* side bar links */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1
+}
+
+.sidebar.open{
+    width: 250px
+}
+/* posistion and style close button */
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right:25px;
+    font-size: 36px;
+    
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main-content {
+    transition:margin-left 0.5s;
+    padding: 18px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+.sidebar {
+    padding-top: 15px;
+}
+.sidebar a {
+    font-size: 18px;
+}
+}
 

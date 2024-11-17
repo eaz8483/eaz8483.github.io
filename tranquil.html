@@ -1,34 +1,45 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<title>Tranquil Home</title>
 <head>
-    <html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranquil Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body style="background-color:rgb(180, 180, 184);">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <div class = "triangle-container">
-    <img id = "cycle-image" src="" alt = "Cycled Images" class = "triangle-image">
-  </div>
+ 
   
-  <div class="hamburger-button">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+  <button id = 'main' class="hamburger-button" onclick="openNav()">
+  <div class = 'hamburger-button'>
+    <div class = 'line'></div>
+    <div class = 'line'></div> 
+    <div class = 'line'></div> 
+  </div>
+  </button>
+  
+  
 
-    <div id = "ham-sidebard" class = 'sidebar'>
-      <a href = 'javascript:void(0)' class = 'closebtn' 
-      onclick="closeNav()">&times;</a>
-        a href = "#"login</a>
-
+  <div id = "ham-sidebar" class = 'sidebar'>
+    <a href = 'javascript:void(0)' class = 'closebtn' 
+    onclick="closeNav()">&times;</a>
+    <a href = "#">login</a>
+    <a href = "#">Home</a>
+    <a href = "#">Most Used Resources</a>
+    <a href = "#">Most Recent</a>
+    <a href = "#">My Account</a>
+    <a href = "#">Inbox</a>
+    <a href = "#">Settings</a>
+  
+  </div>
+  <div id = 'main-content'>
+    <h1 class="fixed-position">Trending</h1>
+    <div class = "triangle-container">
+      <img id = "cycle-image" src="" alt = "Cycled Images" class = "triangle-image">
     </div>
   </div>
-
-
-  <h1 class="fixed-position">Trending</h1>
     
-    <script src = "script.js"></script>
+  <script src = "script.js"></script>
 
 </body>
 </html>

@@ -14,3 +14,33 @@ window.onload = function(){
     imgElement.src = images[randomIndex];
     console.log("image",imgElement.src);
 };
+
+function openNav() {
+    var sidebar = document.getElementById('ham-sidebar');
+    var mainButton = document.getElementById('main');
+
+    sidebar.style.width = '250px';
+    mainButton.style.marginLeft = '250px'
+
+    var hamburgerButton = document.getElementById('main')
+    hamburgerButton.style.display = 'none';
+
+    if (sidebar.classList.contains('open')){
+        sidebar.classList.remove('open');
+    } else{
+        sidebar.classList.add('open');
+    
+    }
+}
+
+function closeNav(){
+    var sidebar = document.getElementById('ham-sidebar');
+    var mainButton = document.getElementById('main');
+
+    sidebar.style.width = '0';
+    mainButton.style.marginLeft = '0'
+
+    var hamburgerButton = document.getElementById('main')
+    sidebar.classList.remove('open');
+    hamburgerButton.style.display = 'block';
+}
