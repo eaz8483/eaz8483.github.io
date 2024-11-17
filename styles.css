@@ -60,10 +60,10 @@ transition: transform 0.3s ease;
     position:fixed;
     top: 0;
     right:0;
-    width:700px;
-    height: 550px;
+    width:1200px;
+    height: 1000px;
     overflow: hidden;
-    clip-path: polygon(0% 0%,100% 62%, 100% 0%);
+    clip-path: polygon(10% 0%,100% 0%, 100% 50%);
     z-index: 1;
  }
 
