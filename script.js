@@ -44,3 +44,27 @@ function closeNav(){
     sidebar.classList.remove('open');
     hamburgerButton.style.display = 'block';
 }
+
+
+const videoLinks = [
+    "https://www.youtube.com/watch?v=4RFEkGKKhdE",
+    "https://www.youtube.com/watch?v=csubiPlvFWk",
+    "https://www.youtube.com/watch?v=CJIXbibQ0jI"
+]
+
+
+videoLinks.forEach(link => {
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${link.split('?v=')[1]}&key=AIzaSyCmA3yfx5T9_kD6u8jqeu7Xa6llf2MiXqw`)
+        .then(response => response.json())
+        .then(data => {
+            const title = data.items[0].snippet.title;
+            const videoItem = document.createElement('div');
+            videoItem.classList.add('video-item');
+            const linkElement = document.createElement('a');
+            linkElement.href = link;
+            linkElement.textContent = title;
+            videoItem.appendChild(linkElement);
+        })
+    document.getElementById('video-list').appendChild(videoItem);
+.catch(error => console.error('Error:', error));
+});
