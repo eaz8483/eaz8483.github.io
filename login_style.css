@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: pink;
+    background: rgb(255, 192, 245);
 }
 
 .wrapper {
