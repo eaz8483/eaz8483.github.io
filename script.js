@@ -67,7 +67,6 @@ videoLinks.forEach(link => {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log('api response: ', data)
             if (data.items.length > 0) {
                 const snippet = data.items[0].snippet;
                 const title = snippet.title;
