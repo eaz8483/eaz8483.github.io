@@ -4,16 +4,32 @@ padding:0;
 
  }
 
+.secular-one-regular {
+    font-family: "Secular One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .fixed-position {
-position: absolute;
-top: 120px;
-left: 30%;
-transform: translateX(-60%);
+position: relative;
+top: 0;
+left: 0;
+transform: none;
 color:rgb(31, 47, 48);
-z-index: 4;
+z-index: 3;
 margin: 0;
  }
+
+.trending-container{
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 4;
+    transition: margin_left 0.5s ease, ease 0.6s;
+}
 
 .hamburger-button {
 width: 35px;
@@ -136,12 +152,13 @@ transition: transform 0.3s ease;
 
 /* Style for articles*/
 .video-item {
+    width: 100%;
     background-color: transparent;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    margin: 20px;
+    text-align: left;
+    margin: 10px 0;
     transition: background-color 0.3s ease,transform 0.3s ease;
     flex: 1 1 auto;
     box-sizing: border-box;
@@ -149,8 +166,9 @@ transition: transform 0.3s ease;
 
 .video-item a {
     color: #fff;
+    font-family: 'Secular One', sans-serif;
     text-decoration:none;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     display: inline-block;
     border-radius: 4px;
@@ -163,11 +181,33 @@ transition: transform 0.3s ease;
     color: #fff;
 }
 
-#video-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+.video-item p {
+    font-family: "Secular One", sans-serif;
+    color: #fff;
+    font-size: 17px;
+    margin: 5px 0 0 0 ;
 }
 
+#video-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.video-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.notes-container {
+    margin: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
 
 

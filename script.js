@@ -18,9 +18,12 @@ window.onload = function(){
 function openNav() {
     var sidebar = document.getElementById('ham-sidebar');
     var mainContent = document.getElementById('main-content');
+    var trendingContainer = document.querySelector('.trending-container');
+
 
     sidebar.style.width = '250px';
     mainContent.style.marginLeft = '250px'
+    trendingContainer.style.marginLeft = '250px'
 
     var hamburgerButton = document.getElementById('main')
     hamburgerButton.style.display = 'none';
@@ -36,9 +39,11 @@ function openNav() {
 function closeNav(){
     var sidebar = document.getElementById('ham-sidebar');
     var mainContent = document.getElementById('main-content');
+    var trendingContainer = document.querySelector('.trending-container');
 
     sidebar.style.width = '0';
     mainContent.style.marginLeft = '0'
+    trendingContainer.style.marginLeft = '0'
 
     var hamburgerButton = document.getElementById('main')
     sidebar.classList.remove('open');
@@ -62,17 +67,32 @@ videoLinks.forEach(link => {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            console.log('api response: ', data)
             if (data.items.length > 0) {
-                const title = data.items[0].snippet.title;
+                const snippet = data.items[0].snippet;
+                const title = snippet.title;
+                let description = snippet.description;
+
+
+                const sentences = description.split('.');
+                if (sentences.length > 3) {
+                    description = sentences.slice(0, 3).join('. ') + '...';
+                }
+
+
                 const videoItem = document.createElement('div');
                 videoItem.classList.add('video-item');
 
                 const linkElement = document.createElement('a');
-                linkElement.href = link;
+                linkElement.href = `video.html?videoId=${videoId}`;
                 linkElement.textContent = title;
                 linkElement.target = "_blank"; // Open link in a new tab
 
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = description;
+
                 videoItem.appendChild(linkElement);
+                videoItem.appendChild(descriptionElement);
                 document.getElementById('video-list').appendChild(videoItem);
             }
         })
