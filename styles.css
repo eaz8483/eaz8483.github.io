@@ -6,7 +6,6 @@ html, body {
     background: linear-gradient(to right,rgb(180,180,184), rgb(280,200,280));
 
  }
-
 #gradient{
     background-image: linear-gradient(to right,rgb(180,180,184), rgb(280,200,280));
     height: 100vh;

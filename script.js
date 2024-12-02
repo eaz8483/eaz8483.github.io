@@ -98,7 +98,6 @@ videoLinks.forEach(link => {
         .catch(error => console.error('Error:', error));
 });
 
-
 const articleLinks = [
     "https://www.nature.com/articles/s41598-022-07762-8",
     "https://www.nature.com/articles/s41398-021-01406-7",]
