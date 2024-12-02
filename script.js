@@ -85,7 +85,7 @@ videoLinks.forEach(link => {
                 const linkElement = document.createElement('a');
                 linkElement.href = `video.html?videoId=${videoId}`;
                 linkElement.textContent = title;
-                linkElement.target = "_blank"; // Open link in a new tab
+                linkElement.target = "_self"; // Open link in a new tab
 
                 const descriptionElement = document.createElement('p');
                 descriptionElement.textContent = description;
@@ -97,3 +97,39 @@ videoLinks.forEach(link => {
         })
         .catch(error => console.error('Error:', error));
 });
+
+
+const articleLinks = [
+    "https://www.nature.com/articles/s41598-022-07762-8",
+    "https://www.nature.com/articles/s41398-021-01406-7",]
+
+const apiKey2 = '0cb9991afb1668bb42208f2038c1f7b5';
+const query = 'Depression AND anxiety';
+const url = `https://api.elsevier.com/content/search/sciencedirect?query=${query}&apiKey=${apiKey2}`;
+
+fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const articles = data['search-results'].entry;
+        articles.forEach(article => {
+            const title = article['dc:title'];
+            const link = article['link'].find(l => l['@ref'] === 'scidir')["@href"];
+
+            const articleItem = document.createElement('div');
+            articleItem.classList.add('article-item');
+
+            const linkElement = document.createElement('a');
+            linkElement.href = link;
+            linkElement.textContent = title;
+            linkElement.target = "_self";
+
+            articleItem.appendChild(linkElement);
+            document.getElementById('article-list').appendChild(articleItem);
+        });
+    })
+    .catch(error => console.error('Error:', error));

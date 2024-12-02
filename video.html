@@ -6,7 +6,7 @@
     <title>Video Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style= "background-color:rgb(180, 180, 184);">
+<body id = "gradient">
     <div class="video-container">
         <iframe id="video-frame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -25,7 +25,7 @@
         <a href="javascript:void(0)" class="closebtn"
            onclick="closeNav()">&times;</a>
         <a href="login_page.html">login</a>
-        <a href="#">Home</a>
+        <a href="tranquil.html">Home</a>
         <a href="#">Most Used Resources</a>
         <a href="most_recent.html">Most Recent</a>
         <a href="#">My Account</a>
@@ -33,50 +33,7 @@
         <a href="#">Settings</a>
     </div>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const videoId = urlParams.get('videoId');
-        if (videoId) {
-            document.getElementById('video-frame').src = `https://www.youtube.com/embed/${videoId}`;
-        }
-
-        function openNav() {
-            var sidebar = document.getElementById("ham-sidebar").style.width = "250px";
-            var videoContainer = document.getElementById("video-frame")
-            var notesContainer = document.getElementById("notes-container")
-            var textArea = document.getElementById("notes")
-
-            videoContainer.style.marginLeft = "250px";
-            notesContainer.style.marginLeft = "250px";
-            textArea.style.marginLeft = "250px";
-
-            var hamburgerButton = document.getElementById('main')
-            hamburgerButton.style.display = 'none';
-
-            if (sidebar.classList.contains('open')){
-                sidebar.classList.remove('open');
-            } else{
-                sidebar.classList.add('open');
-
-            }
-        }
-
-        function closeNav() {
-            var sidebar = document.getElementById("ham-sidebar");
-            var videoContainer = document.getElementById("video-frame")
-            var notesContainer = document.getElementById("notes-container")
-            var textArea = document.getElementById("notes")
-
-            sidebar.style.width = "0";
-            videoContainer.style.marginLeft = "0";
-            notesContainer.style.marginLeft = "0";
-            textArea.style.marginLeft = "0";
-
-            var hamburgerButton = document.getElementById('main')
-            sidebar.classList.remove('open');
-            hamburgerButton.style.display = 'block';
-        }
-    </script>
+    <script src = "video.js"></script>
 
 
 </body>

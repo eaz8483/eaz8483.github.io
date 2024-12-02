@@ -1,8 +1,18 @@
-body {
-margin:0;
-padding:0;
+html, body {
+    margin:0;
+    padding:0;
+    height: 100%;
+    font-family: "Secular One", sans-serif;
+    background: linear-gradient(to right,rgb(180,180,184), rgb(280,200,280));
 
  }
+
+#gradient{
+    background-image: linear-gradient(to right,rgb(180,180,184), rgb(280,200,280));
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 
 .secular-one-regular {
     font-family: "Secular One", sans-serif;
@@ -151,7 +161,7 @@ transition: transform 0.3s ease;
 }
 
 /* Style for articles*/
-.video-item {
+.video-item, .article-item {
     width: 100%;
     background-color: transparent;
     padding: 20px;
@@ -164,7 +174,7 @@ transition: transform 0.3s ease;
     box-sizing: border-box;
 }
 
-.video-item a {
+.video-item a, .article-item a {
     color: #fff;
     font-family: 'Secular One', sans-serif;
     text-decoration:none;
@@ -176,32 +186,33 @@ transition: transform 0.3s ease;
 }
 
 
-.video-item:hover {
+.video-item:hover , .article-item:hover {
     background-color: #0056b3;
     color: #fff;
 }
 
 
-.video-item p {
+.video-item p, .article-item p {
     font-family: "Secular One", sans-serif;
     color: #fff;
     font-size: 17px;
     margin: 5px 0 0 0 ;
 }
 
-#video-list {
+#video-list, #article-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
 }
-.video-container {
+.video-container, .article-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     text-align: center;
     margin: 20px;
+    transition: margin-left 0.5s;
 }
 
 .notes-container {
@@ -209,6 +220,8 @@ transition: transform 0.3s ease;
     flex-direction: column;
     position: relative;
     margin: 20px;
+    padding: 20px;
+    transition: margin-left 0.5s;
 }
 
 textarea {
@@ -218,6 +231,7 @@ textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
+    transition: margin-left 0.5s;
 }
 
 
